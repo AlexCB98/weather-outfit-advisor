@@ -6,6 +6,7 @@ class OutfitAdvisor:
     def get_recommendation(self):
         temperature = self.weather.temperature
         wind_speed = self.weather.wind_speed
+        weather_code = self.weather.weather_code
 
         if temperature < 5:
             recommendation = 'Wear a winter jacket.'
@@ -18,6 +19,17 @@ class OutfitAdvisor:
 
         if wind_speed > 25:
             recommendation += '\nIt is windy outside.'
+
+        if weather_code == 0:
+            recommendation += '\nWeather: Clear sky.'
+        elif weather_code == 1:
+            recommendation += '\nWeather: Mainly clear.'
+        elif weather_code == 2:
+            recommendation += '\nWeather: Partly cloudy.'
+        elif weather_code == 3:
+            recommendation += '\nWeather: Overcast.'
+        else:
+            recommendation += '\nWeather: Unknown weather condition.'
 
 
         return recommendation
