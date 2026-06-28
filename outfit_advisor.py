@@ -41,5 +41,4 @@ class OutfitAdvisor:
         else:
             recommendation += '\nWeather: Unknown weather condition.'
 
-
         return recommendation

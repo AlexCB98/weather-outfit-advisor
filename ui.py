@@ -6,7 +6,6 @@ import tkinter as tk
 
 FONT = ('Arial', 20, 'italic')
 
-# Color Hunt palette: https://colorhunt.co/palette/0b1d51725cad8ccdebffe3a9
 NAVY = '#0B1D51'
 PURPLE = '#725CAD'
 SKY_BLUE = '#8CCDEB'
@@ -65,8 +64,6 @@ class WeatherApp:
         )
         self.label_2.grid(row=2, column=0, columnspan=2, sticky='ew')
 
-
-
         self.window.mainloop()
 
 
@@ -94,5 +91,6 @@ class WeatherApp:
             )
 
             self.label_2.config(text=result_text)
+
         except Exception:
             self.label_2.config(text='City not found or API error.')

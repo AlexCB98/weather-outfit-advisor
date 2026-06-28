@@ -16,4 +16,3 @@ def get_weather_data(latitude, longitude):
     data = response.json()
 
     return data
-
