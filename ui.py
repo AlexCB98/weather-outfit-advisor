@@ -71,4 +71,28 @@ class WeatherApp:
 
 
     def get_weather_recommendation(self):
-        pass
+        city_name = self.entry.get().title()
+        if not city_name:
+            self.label_2.config(text='Please enter a city name.')
+            return
+
+        try:
+            location = get_coordinates(city_name)
+
+            latitude = location["latitude"]
+            longitude = location["longitude"]
+
+            data = get_weather_data(latitude, longitude)
+            weather = Weather(data)
+            advisor = OutfitAdvisor(weather)
+
+            result_text = (
+                f'City: {location["name"]}, {location["country"]}\n\n'
+                f'Temperature: {weather.temperature}°C\n'
+                f'Wind speed: {weather.wind_speed} km/h\n\n'
+                f'Recommendation:\n{advisor.get_recommendation()}'
+            )
+
+            self.label_2.config(text=result_text)
+        except Exception:
+            self.label_2.config(text='City not found or API error.')
