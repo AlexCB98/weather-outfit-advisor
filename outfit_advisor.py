@@ -5,12 +5,19 @@ class OutfitAdvisor:
 
     def get_recommendation(self):
         temperature = self.weather.temperature
+        wind_speed = self.weather.wind_speed
 
         if temperature < 5:
-            return 'Wear a winter jacket.'
+            recommendation = 'Wear a winter jacket.'
         elif temperature <= 15:
-            return 'Wear a jacket.'
+            recommendation = 'Wear a jacket.'
         elif temperature <= 22:
-            return 'Wear a hoodie or light jacket.'
+            recommendation = 'Wear a hoodie or light jacket.'
         else:
-            return 'Wear a t-shirt'
+            recommendation = 'Wear a t-shirt.'
+
+        if wind_speed > 25:
+            recommendation += '\nIt is windy outside.'
+
+
+        return recommendation
