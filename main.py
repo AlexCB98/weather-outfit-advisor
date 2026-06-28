@@ -11,4 +11,6 @@ data = get_weather_data(latitude, longitude)
 weather = Weather(data)
 advisor = OutfitAdvisor(weather)
 
-print(advisor.get_recommendation())
+print(f'\n- Temperature: {weather.temperature}°C')
+print(f'- Wind speed: {weather.wind_speed} km/h')
+print(f'- Recommendation: {advisor.get_recommendation()}')
