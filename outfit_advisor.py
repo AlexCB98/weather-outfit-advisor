@@ -28,6 +28,16 @@ class OutfitAdvisor:
             recommendation += '\nWeather: Partly cloudy.'
         elif weather_code == 3:
             recommendation += '\nWeather: Overcast.'
+        elif weather_code in [45, 48]:
+            recommendation += '\nWeather: Fog.'
+        elif weather_code in [51, 53, 55]:
+            recommendation += '\nWeather: Drizzle.'
+        elif weather_code in [61, 63, 65]:
+            recommendation += '\nWeather: Rain.'
+        elif weather_code in [71, 73, 75]:
+            recommendation += '\nWeather: Snow.'
+        elif weather_code == 95:
+            recommendation += '\nWeather: Thunderstorm.'
         else:
             recommendation += '\nWeather: Unknown weather condition.'
 
