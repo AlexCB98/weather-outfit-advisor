@@ -4,10 +4,10 @@ from outfit_advisor import OutfitAdvisor
 
 #https://www.latlong.net/
 
-LATITUDE = 48.669102
-LONGITUDE = 12.690720
+latitude = float(input('Latitude: '))
+longitude = float(input('Longitude: '))
 
-data = get_weather_data(LATITUDE, LONGITUDE)
+data = get_weather_data(latitude, longitude)
 weather = Weather(data)
 advisor = OutfitAdvisor(weather)
 
